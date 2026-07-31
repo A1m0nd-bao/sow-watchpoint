@@ -86,6 +86,19 @@ const deals = [
   "欢迎现场看样后再决定",
 ];
 
+const paymentMethods = [
+  {
+    name: "微信支付",
+    image: "payments/wechat-pay.jpg",
+    note: "推荐使用微信支付",
+  },
+  {
+    name: "支付宝",
+    image: "payments/alipay.jpg",
+    note: "也可以使用支付宝",
+  },
+];
+
 export default function Home() {
   const [active, setActive] = useState("全部");
 
@@ -106,6 +119,7 @@ export default function Home() {
           <div className="topbar-links">
             <a href="#products">商品</a>
             <a href="#prices">提示</a>
+            <a href="#payment">付款</a>
             <a href="#visit">现场</a>
           </div>
         </nav>
@@ -205,6 +219,28 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="payment" className="payment-band">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">Payment</p>
+            <h2>付款方式</h2>
+          </div>
+          <p className="section-note">第一个为微信支付，第二个为支付宝。现场付款时请确认金额后再扫码。</p>
+        </div>
+
+        <div className="payment-grid">
+          {paymentMethods.map((method) => (
+            <article className="payment-card" key={method.name}>
+              <div>
+                <p>{method.note}</p>
+                <h3>{method.name}</h3>
+              </div>
+              <img src={method.image} alt={`${method.name}收款码`} />
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="visit" className="visit-band">
         <div>
           <p className="eyebrow">Booth Info</p>
@@ -221,7 +257,7 @@ export default function Home() {
           </div>
           <div>
             <span>支付方式</span>
-            <strong>扫码 / 现金待补</strong>
+            <strong>微信 / 支付宝</strong>
           </div>
         </div>
       </section>

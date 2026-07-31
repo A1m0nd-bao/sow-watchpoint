@@ -15,6 +15,8 @@
   --gold: #ffd05a;
   --pink: #ff75b7;
   --olive: #a5a640;
+  --font-geist-sans: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-geist-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 @theme inline {
@@ -296,6 +298,7 @@ h3 {
 
 .content-band,
 .deal-band,
+.payment-band,
 .visit-band {
   width: min(1160px, calc(100% - 36px));
   margin: 0 auto;
@@ -557,6 +560,48 @@ h3 {
   font-size: clamp(1.1rem, 2.3vw, 1.75rem);
 }
 
+.payment-band {
+  padding-top: 34px;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.payment-card {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 8px;
+  padding: 18px;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(255, 117, 183, 0.13), transparent 16rem),
+    rgba(255, 255, 255, 0.06);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
+}
+
+.payment-card p {
+  margin-bottom: 6px;
+  color: rgba(247, 251, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.payment-card h3 {
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+}
+
+.payment-card img {
+  display: block;
+  width: 100%;
+  max-height: 680px;
+  border-radius: 8px;
+  background: white;
+  object-fit: contain;
+}
+
 .visit-band {
   display: grid;
   grid-template-columns: minmax(0, 0.52fr) minmax(0, 1fr);
@@ -608,6 +653,7 @@ h3 {
 @media (max-width: 920px) {
   .hero-grid,
   .deal-band,
+  .payment-band,
   .visit-band {
     grid-template-columns: 1fr;
   }
@@ -622,6 +668,7 @@ h3 {
   }
 
   .product-grid,
+  .payment-grid,
   .visit-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -673,6 +720,7 @@ h3 {
   }
 
   .product-grid,
+  .payment-grid,
   .visit-grid {
     grid-template-columns: 1fr;
   }
