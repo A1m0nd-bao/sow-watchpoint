@@ -14,22 +14,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://a1m0nd-bao.github.io/sow-watchpoint"),
-  title: "SOW Watchpoint | 守望先锋主题同人摊",
-  description: "守望先锋主题同人摊商品样式、价格与现场优惠展示页。",
+  title: "AL的望望小铺 | 守望先锋主题同人摊",
+  description: "AL的望望小铺商品图鉴：吧唧、明信片、香片、小卡立牌、光栅卡和冰箱贴。",
   openGraph: {
-    title: "SOW Watchpoint",
-    description: "Overwatch fan merch, prints, charms and convention booth deals.",
-    images: ["/og.png"],
+    title: "AL的望望小铺",
+    description: "守望先锋主题同人商品图鉴与现场摊位信息。",
+    images: ["https://a1m0nd-bao.github.io/sow-watchpoint/og.jpg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SOW Watchpoint",
-    description: "Overwatch fan merch, prints, charms and convention booth deals.",
-    images: ["/og.png"],
+    title: "AL的望望小铺",
+    description: "守望先锋主题同人商品图鉴与现场摊位信息。",
+    images: ["https://a1m0nd-bao.github.io/sow-watchpoint/og.jpg"],
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "https://a1m0nd-bao.github.io/sow-watchpoint/favicon.svg",
+    shortcut: "https://a1m0nd-bao.github.io/sow-watchpoint/favicon.svg",
   },
 };
 

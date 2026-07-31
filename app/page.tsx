@@ -9,65 +9,81 @@ type Product = {
   tone: string;
   badge: string;
   desc: string;
+  image: string;
 };
 
-const categories = ["全部", "立牌", "色纸", "挂件", "贴纸", "套组"];
+const categories = ["全部", "吧唧", "明信片", "香片", "小卡/立牌", "光栅卡", "冰箱贴"];
 
 const products: Product[] = [
   {
-    name: "英雄小队亚克力立牌",
-    category: "立牌",
-    price: "¥48",
-    tone: "orange",
-    badge: "热卖",
-    desc: "未来战场风双面亚克力，适合桌面阵容展示。",
+    name: "魔法雾子吧唧",
+    category: "吧唧",
+    price: "¥待补",
+    tone: "pink",
+    badge: "魔法雾子",
+    desc: "甜亮魔法少女风，蓝粉高饱和配色，适合痛包中心位。",
+    image: "products/magic-kiriko-badge.jpg",
   },
   {
-    name: "推车地图纪念色纸",
-    category: "色纸",
-    price: "¥35",
+    name: "雾子明信片",
+    category: "明信片",
+    price: "¥待补",
     tone: "sky",
-    badge: "新款",
-    desc: "城市战场氛围插画，高饱和印刷，现场很出片。",
+    badge: "明信片",
+    desc: "蓝天白云下的雾子与狐灵，清爽治愈，适合收藏和互换。",
+    image: "products/kiriko-postcard.jpg",
   },
   {
-    name: "职责图标金属挂件",
-    category: "挂件",
-    price: "¥28",
-    tone: "white",
-    badge: "单品",
-    desc: "坦克、输出、支援三类灵感挂件，痛包搭配很利落。",
-  },
-  {
-    name: "补给箱贴纸包",
-    category: "贴纸",
-    price: "¥15",
-    tone: "blue",
-    badge: "小物",
-    desc: "异形切割贴纸，包含光效、弹痕、语音气泡等元素。",
-  },
-  {
-    name: "Watchpoint 入队套组",
-    category: "套组",
-    price: "¥98",
-    tone: "orange",
-    badge: "划算",
-    desc: "立牌、挂件、贴纸组合装，一次收齐今日主推阵容。",
-  },
-  {
-    name: "支援位限定色纸",
-    category: "色纸",
-    price: "¥38",
+    name: "土豆香片",
+    category: "香片",
+    price: "¥待补",
     tone: "gold",
-    badge: "限定",
-    desc: "偏治疗光效和白金装甲氛围，数量有限，售完即止。",
+    badge: "香片",
+    desc: "很有记忆点的土豆造型香片，摊位小物区的快乐担当。",
+    image: "products/potato-fragrance.png",
+  },
+  {
+    name: "探奇拍立得小卡和立牌",
+    category: "小卡/立牌",
+    price: "¥待补",
+    tone: "olive",
+    badge: "组合",
+    desc: "探奇 Q 版小卡与立牌，动作俏皮，适合桌面展示。",
+    image: "products/venture-polaroid-standee.png",
+  },
+  {
+    name: "飞天猫光栅卡",
+    category: "光栅卡",
+    price: "¥待补",
+    tone: "amber",
+    badge: "光栅",
+    desc: "飞天猫主题光栅卡，橙色暖调和星星元素很适合现场陈列。",
+    image: "products/flying-cat-lenticular.jpg",
+  },
+  {
+    name: "安燃冰箱贴",
+    category: "冰箱贴",
+    price: "¥待补",
+    tone: "orange",
+    badge: "冰箱贴",
+    desc: "火焰主题 Q 版冰箱贴，暖色系视觉强，适合成对摆放。",
+    image: "products/anran-magnet.jpg",
+  },
+  {
+    name: "无漾冰箱贴",
+    category: "冰箱贴",
+    price: "¥待补",
+    tone: "blue",
+    badge: "冰箱贴",
+    desc: "水流主题 Q 版冰箱贴，蓝色清透，与安燃款可以组成一对。",
+    image: "products/wuyang-magnet.jpg",
   },
 ];
 
 const deals = [
-  "贴纸包 3 份 ¥40",
-  "挂件 2 个 ¥50",
-  "入队套组送补给箱小卡",
+  "价格与余量以现场摊位牌为准",
+  "冰箱贴可成对陈列购买",
+  "欢迎现场看样后再决定",
 ];
 
 export default function Home() {
@@ -78,18 +94,20 @@ export default function Home() {
     return products.filter((product) => product.category === active);
   }, [active]);
 
+  const heroProducts = products.slice(0, 4);
+
   return (
-    <main className="min-h-screen overflow-hidden bg-[#07080d] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#080912] text-white">
       <section className="hero-shell">
         <div className="hero-light hero-light-a" />
         <div className="hero-light hero-light-b" />
         <nav className="topbar" aria-label="摊位导航">
           <a className="brand-mark" href="#top" aria-label="返回顶部">
-            SOW
+            AL
           </a>
           <div className="topbar-links">
             <a href="#products">商品</a>
-            <a href="#prices">优惠</a>
+            <a href="#prices">提示</a>
             <a href="#visit">现场</a>
           </div>
         </nav>
@@ -97,25 +115,34 @@ export default function Home() {
         <div id="top" className="hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Overwatch Fan Booth</p>
-            <h1>SOW Watchpoint</h1>
+            <h1>AL的望望小铺</h1>
             <p className="hero-subtitle">
-              守望先锋主题同人摊商品展示页。立牌、色纸、挂件、贴纸和今日优惠都放在这里，扫码后可以快速浏览并对照价格。
+              守望先锋主题同人小铺。这里放着今日带来的吧唧、明信片、香片、小卡立牌、光栅卡和冰箱贴，扫码就能快速看图挑款。
             </p>
             <div className="hero-actions" aria-label="快捷入口">
               <a className="primary-action" href="#products">
-                看商品
+                看商品图
               </a>
-              <a className="secondary-action" href="#prices">
-                看优惠
+              <a className="secondary-action" href="#visit">
+                看摊位信息
               </a>
             </div>
           </div>
 
-          <div className="hero-visual" aria-label="守望先锋主题摊位商品主视觉">
-            <img src="/og.png" alt="SOW Watchpoint 守望先锋主题同人摊商品展示" />
+          <div className="hero-visual" aria-label="AL的望望小铺商品主视觉">
+            <div className="hero-collage">
+              {heroProducts.map((product, index) => (
+                <img
+                  className={`hero-shot hero-shot-${index + 1}`}
+                  key={product.name}
+                  src={product.image}
+                  alt={product.name}
+                />
+              ))}
+            </div>
             <div className="scan-card">
-              <span>摊位号</span>
-              <strong>默认占位</strong>
+              <span>摊位名</span>
+              <strong>AL的望望小铺</strong>
             </div>
           </div>
         </div>
@@ -123,8 +150,11 @@ export default function Home() {
 
       <section id="products" className="content-band">
         <div className="section-heading">
-          <p className="eyebrow">Payload Merch Menu</p>
-          <h2>今日补给清单</h2>
+          <div>
+            <p className="eyebrow">Merch Gallery</p>
+            <h2>今日商品图鉴</h2>
+          </div>
+          <p className="section-note">价格先留占位，后续可按你的价目表一键替换。</p>
         </div>
 
         <div className="filter-row" aria-label="商品分类筛选">
@@ -144,12 +174,8 @@ export default function Home() {
         <div className="product-grid">
           {visibleProducts.map((product) => (
             <article className={`product-card tone-${product.tone}`} key={product.name}>
-              <div className="product-art" aria-hidden="true">
-                <div className="art-plate">
-                  <span />
-                </div>
-                <div className="art-chip chip-one" />
-                <div className="art-chip chip-two" />
+              <div className="product-art">
+                <img src={product.image} alt={product.name} />
               </div>
               <div className="product-info">
                 <div>
@@ -170,10 +196,10 @@ export default function Home() {
 
       <section id="prices" className="deal-band">
         <div className="deal-copy">
-          <p className="eyebrow">Mission Bonus</p>
-          <h2>今日任务奖励</h2>
+          <p className="eyebrow">Booth Notes</p>
+          <h2>购买提示</h2>
           <p>
-            这里先用守望先锋主题的占位活动。后面可以换成你的真实满减、套装价、限量规则和无料领取条件。
+            当前版本已经换成真实商品图。价格、摊位号、限购规则和无料说明还可以继续按现场信息补齐。
           </p>
         </div>
         <div className="deal-list">
@@ -188,21 +214,21 @@ export default function Home() {
 
       <section id="visit" className="visit-band">
         <div>
-          <p className="eyebrow">Rally Point</p>
-          <h2>集合点信息</h2>
+          <p className="eyebrow">Booth Info</p>
+          <h2>现场信息</h2>
         </div>
         <div className="visit-grid">
           <div>
             <span>摊位名称</span>
-            <strong>SOW Watchpoint</strong>
+            <strong>AL的望望小铺</strong>
           </div>
           <div>
             <span>摊位号</span>
-            <strong>默认占位</strong>
+            <strong>待补</strong>
           </div>
           <div>
             <span>支付方式</span>
-            <strong>扫码 / 现金占位</strong>
+            <strong>扫码 / 现金待补</strong>
           </div>
         </div>
       </section>
