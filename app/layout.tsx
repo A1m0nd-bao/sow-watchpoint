@@ -13,17 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Booth Spark Market | 漫展商品展示",
-  description: "今日漫展摊位商品样式、价格与现场优惠展示页。",
+  title: "SOW Watchpoint | 守望先锋主题同人摊",
+  description: "守望先锋主题同人摊商品样式、价格与现场优惠展示页。",
   openGraph: {
-    title: "Booth Spark Market",
-    description: "Prints, charms, stickers and convention booth deals.",
+    title: "SOW Watchpoint",
+    description: "Overwatch fan merch, prints, charms and convention booth deals.",
     images: ["/og.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Booth Spark Market",
-    description: "Prints, charms, stickers and convention booth deals.",
+    title: "SOW Watchpoint",
+    description: "Overwatch fan merch, prints, charms and convention booth deals.",
     images: ["/og.png"],
   },
   icons: {
