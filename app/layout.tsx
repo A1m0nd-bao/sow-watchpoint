@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://a1m0nd-bao.github.io/sow-watchpoint"),
   title: "SOW Watchpoint | 守望先锋主题同人摊",
   description: "守望先锋主题同人摊商品样式、价格与现场优惠展示页。",
   openGraph: {
