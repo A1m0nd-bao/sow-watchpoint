@@ -94,8 +94,6 @@ export default function Home() {
     return products.filter((product) => product.category === active);
   }, [active]);
 
-  const heroProducts = products.slice(0, 4);
-
   return (
     <main className="min-h-screen overflow-hidden bg-[#080912] text-white">
       <section className="hero-shell">
@@ -130,16 +128,11 @@ export default function Home() {
           </div>
 
           <div className="hero-visual" aria-label="AL的望望小铺商品主视觉">
-            <div className="hero-collage">
-              {heroProducts.map((product, index) => (
-                <img
-                  className={`hero-shot hero-shot-${index + 1}`}
-                  key={product.name}
-                  src={product.image}
-                  alt={product.name}
-                />
-              ))}
-            </div>
+            <img
+              className="hero-feature"
+              src="og.png"
+              alt="AL的望望小铺首页氛围展示图"
+            />
             <div className="scan-card">
               <span>摊位名</span>
               <strong>AL的望望小铺</strong>

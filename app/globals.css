@@ -257,64 +257,15 @@ h3 {
   opacity: 0.7;
 }
 
-.hero-collage {
+.hero-feature {
   position: relative;
-  min-height: clamp(430px, 50vw, 620px);
-  overflow: hidden;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 24px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.04)),
-    radial-gradient(circle at 20% 20%, rgba(255, 117, 183, 0.18), transparent 18rem),
-    radial-gradient(circle at 80% 70%, rgba(37, 184, 255, 0.18), transparent 18rem);
-  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.46);
-}
-
-.hero-shot {
-  position: absolute;
-  display: block;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 18px;
   object-fit: cover;
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.36);
-}
-
-.hero-shot-1 {
-  left: 5%;
-  top: 7%;
-  width: 48%;
-  aspect-ratio: 1 / 1;
-  transform: rotate(-4deg);
-}
-
-.hero-shot-2 {
-  right: 5%;
-  top: 10%;
-  width: 52%;
-  aspect-ratio: 16 / 10;
-  transform: rotate(3deg);
-}
-
-.hero-shot-3 {
-  left: 10%;
-  bottom: 8%;
-  width: 32%;
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-  padding: 22px;
-  background: rgba(255, 255, 255, 0.9);
-  transform: rotate(5deg);
-}
-
-.hero-shot-4 {
-  right: 10%;
-  bottom: 6%;
-  width: 36%;
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.93);
-  transform: rotate(-5deg);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.46);
 }
 
 .scan-card {
@@ -707,8 +658,8 @@ h3 {
     flex: 1 1 150px;
   }
 
-  .hero-collage {
-    min-height: 380px;
+  .hero-feature {
+    min-height: 310px;
   }
 
   .scan-card {
