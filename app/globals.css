@@ -147,10 +147,10 @@ button {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(360px, 1.18fr);
+  grid-template-columns: minmax(420px, 0.86fr) minmax(500px, 1.14fr);
   gap: clamp(28px, 5vw, 72px);
   align-items: center;
-  width: min(1160px, 100%);
+  width: min(1280px, 100%);
   min-height: calc(100svh - 96px);
   margin: 0 auto;
   padding: 52px 0 0;
@@ -158,6 +158,18 @@ button {
 
 .hero-copy {
   animation: rise 700ms ease both;
+}
+
+.hero-copy h1 {
+  max-width: none;
+  margin-bottom: 24px;
+  font-size: clamp(4.2rem, 7.1vw, 6.8rem);
+  line-height: 0.84;
+}
+
+.hero-copy h1 span {
+  display: block;
+  white-space: nowrap;
 }
 
 .eyebrow {
@@ -202,7 +214,7 @@ h3 {
 }
 
 .hero-subtitle {
-  max-width: 580px;
+  max-width: 500px;
   margin-bottom: 30px;
   color: rgba(247, 251, 255, 0.78);
   font-size: clamp(1rem, 1.4vw, 1.18rem);
@@ -886,6 +898,10 @@ h3 {
 
   h1 {
     max-width: 9ch;
+  }
+
+  .hero-copy h1 {
+    max-width: none;
   }
 
   .product-grid,

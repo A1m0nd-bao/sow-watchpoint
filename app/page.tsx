@@ -137,7 +137,10 @@ export default function Home() {
         <div id="top" className="hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Overwatch Fan Booth</p>
-            <h1>AL的望望小铺</h1>
+            <h1>
+              <span>AL的</span>
+              <span>望望小铺</span>
+            </h1>
             <p className="hero-subtitle">
               守望先锋主题同人小铺。这里放着今日带来的吧唧、明信片、香片、小卡立牌、光栅卡和冰箱贴，扫码就能快速看图挑款。
             </p>
