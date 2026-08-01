@@ -1,10 +1,12 @@
-const priceGroups = [
-  ["魔法雾子吧唧", "¥14", "magic-kiriko-badge.jpg"],
-  ["雾子明信片", "¥8", "kiriko-postcard.jpg"],
-  ["土豆香片", "¥10", "potato-fragrance.png"],
-  ["探奇拍立得小卡", "¥8", "venture-polaroid-standee.png"],
-  ["探奇亚克力立牌", "¥16", "venture-polaroid-standee.png"],
-  ["飞天猫光栅卡", "¥8", "flying-cat-lenticular.jpg"],
+const products = [
+  { name: "魔法雾子吧唧", price: "¥14", image: "magic-kiriko-badge.jpg", type: "吧唧" },
+  { name: "雾子明信片", price: "¥8", image: "kiriko-postcard.jpg", type: "明信片" },
+  { name: "土豆香片", price: "¥10", image: "potato-fragrance.png", type: "香片" },
+  { name: "探奇拍立得小卡", price: "¥8", image: "venture-polaroid-standee.png", type: "小卡" },
+  { name: "探奇亚克力立牌", price: "¥16", image: "venture-polaroid-standee.png", type: "立牌" },
+  { name: "飞天猫光栅卡", price: "¥8", image: "flying-cat-lenticular.jpg", type: "光栅卡" },
+  { name: "安燃冰箱贴", price: "¥12", image: "anran-magnet.jpg", type: "冰箱贴", note: "任选两个 ¥20" },
+  { name: "无漾冰箱贴", price: "¥12", image: "wuyang-magnet.jpg", type: "冰箱贴", note: "任选两个 ¥20" },
 ];
 
 export default function PosterPage() {
@@ -28,29 +30,23 @@ export default function PosterPage() {
         <div className="poster-event">魔都守望先锋同好会 only 1.0 · 老友记</div>
 
         <div className="poster-body">
-          <div className="poster-prices">
-            <p className="poster-label">PRICE LIST</p>
-            <div className="poster-price-grid">
-              {priceGroups.map(([name, price, image]) => (
-                <div className="poster-price" key={name}>
-                  <div className="poster-product-name">
-                    <img src={`../products/${image}`} alt="" />
-                    <span>{name}</span>
+          <p className="poster-label">TODAY&apos;S MERCH</p>
+          <div className="poster-gallery">
+            {products.map((product) => (
+              <article className="poster-product-card" key={product.name}>
+                <div className="poster-product-art">
+                  <img src={`../products/${product.image}`} alt={product.name} />
+                </div>
+                <div className="poster-product-meta">
+                  <div>
+                    <p>{product.type}</p>
+                    <h2>{product.name}</h2>
+                    {product.note && <small>{product.note}</small>}
                   </div>
-                  <strong>{price}</strong>
+                  <strong>{product.price}</strong>
                 </div>
-              ))}
-            </div>
-            <div className="poster-magnet">
-              <div className="poster-product-name">
-                <div className="poster-magnet-thumbs" aria-hidden="true">
-                  <img src="../products/anran-magnet.jpg" alt="" />
-                  <img src="../products/wuyang-magnet.jpg" alt="" />
-                </div>
-                <span>安燃 / 无漾冰箱贴</span>
-              </div>
-              <strong>¥12 一个 <i /> ¥20 两个</strong>
-            </div>
+              </article>
+            ))}
           </div>
         </div>
 

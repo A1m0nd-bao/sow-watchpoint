@@ -647,15 +647,15 @@ h3 {
 .poster-background {
   object-fit: cover;
   object-position: center;
-  filter: blur(9px) saturate(0.88);
-  opacity: 0.64;
-  transform: scale(1.045);
+  filter: blur(17px) saturate(0.68);
+  opacity: 0.42;
+  transform: scale(1.075);
 }
 
 .poster-shade {
   background:
-    linear-gradient(90deg, rgba(255, 249, 239, 0.88) 0%, rgba(255, 249, 239, 0.64) 52%, rgba(255, 249, 239, 0.25) 100%),
-    rgba(255, 249, 239, 0.24);
+    linear-gradient(90deg, rgba(255, 249, 239, 0.94) 0%, rgba(255, 249, 239, 0.79) 50%, rgba(255, 249, 239, 0.47) 100%),
+    rgba(255, 249, 239, 0.32);
 }
 
 .poster-content {
@@ -735,100 +735,90 @@ h3 {
 
 .poster-body {
   display: grid;
-  align-items: end;
-  padding: clamp(18px, 3.5vw, 56px) 0;
+  align-content: end;
+  padding: clamp(12px, 2.2vw, 30px) 0;
 }
 
-.poster-prices {
-  width: min(68%, 860px);
-}
-
-.poster-price-grid {
+.poster-gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  border: 1px solid rgba(22, 50, 99, 0.24);
-  background: rgba(22, 50, 99, 0.24);
-  box-shadow: 0 18px 36px rgba(35, 74, 134, 0.12);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(8px, 1.05vw, 16px);
+  width: 100%;
 }
 
-.poster-price {
+.poster-product-card {
   display: flex;
-  min-height: clamp(44px, 5.6vw, 88px);
-  align-items: center;
+  min-height: clamp(144px, 24vh, 196px);
+  flex-direction: column;
   justify-content: space-between;
-  gap: 14px;
-  padding: 10px clamp(12px, 1.7vw, 28px);
-  background: rgba(255, 252, 247, 0.92);
+  overflow: hidden;
+  border: 1px solid rgba(23, 50, 99, 0.2);
+  border-radius: 6px;
+  background: rgba(255, 252, 247, 0.86);
+  box-shadow: 0 12px 26px rgba(35, 74, 134, 0.12);
 }
 
-.poster-product-name {
+.poster-product-art {
   display: flex;
-  min-width: 0;
+  width: 100%;
+  min-height: clamp(90px, 14vh, 124px);
   align-items: center;
-  gap: clamp(7px, 0.9vw, 13px);
+  justify-content: center;
+  padding: clamp(5px, 0.75vw, 10px);
+  background: rgba(239, 241, 246, 0.72);
 }
 
-.poster-product-name > img,
-.poster-magnet-thumbs img {
+.poster-product-art img {
   display: block;
-  width: clamp(28px, 3.25vw, 48px);
-  height: clamp(28px, 3.25vw, 48px);
-  flex: none;
-  border: 1px solid rgba(23, 50, 99, 0.18);
-  border-radius: 4px;
-  background: white;
-  object-fit: cover;
+  width: 100%;
+  height: clamp(82px, 12.8vh, 114px);
+  object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
-.poster-price span,
-.poster-magnet span {
-  min-width: 0;
-  font-size: clamp(0.83rem, 1.55vw, 1.65rem);
-  font-weight: 850;
+.poster-product-meta {
+  display: flex;
+  width: 100%;
+  align-items: end;
+  justify-content: space-between;
+  gap: 8px;
+  padding: clamp(7px, 0.85vw, 12px);
 }
 
-.poster-price strong,
-.poster-magnet strong {
+.poster-product-meta p,
+.poster-product-meta h2,
+.poster-product-meta small {
+  margin: 0;
+}
+
+.poster-product-meta p {
+  margin-bottom: 2px;
+  color: #e86427;
+  font-size: clamp(0.56rem, 0.78vw, 0.8rem);
+  font-weight: 900;
+}
+
+.poster-product-meta h2 {
+  color: #173263;
+  font-size: clamp(0.78rem, 1.2vw, 1.25rem);
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+.poster-product-meta small {
+  display: block;
+  margin-top: 3px;
+  color: #61708c;
+  font-size: clamp(0.5rem, 0.67vw, 0.72rem);
+  font-weight: 800;
+}
+
+.poster-product-meta strong {
   flex: none;
   color: #e45221;
-  font-size: clamp(1.35rem, 2.75vw, 3.2rem);
+  font-size: clamp(1.25rem, 2.35vw, 2.7rem);
   font-weight: 950;
   line-height: 0.9;
-}
-
-.poster-magnet {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  margin-top: 10px;
-  padding: clamp(11px, 1.55vw, 22px) clamp(13px, 1.7vw, 28px);
-  border-left: 6px solid #e86427;
-  background: rgba(23, 50, 99, 0.92);
-  color: white;
-}
-
-.poster-magnet strong {
-  color: #ffbd6a;
-}
-
-.poster-magnet-thumbs {
-  display: flex;
-  flex: none;
-}
-
-.poster-magnet-thumbs img + img {
-  margin-left: -9px;
-}
-
-.poster-magnet i {
-  display: inline-block;
-  width: 1px;
-  height: 0.75em;
-  margin: 0 0.18em;
-  background: rgba(255, 255, 255, 0.45);
-  vertical-align: -0.05em;
 }
 
 .poster-footer {
@@ -904,9 +894,6 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .poster-prices {
-    width: 72%;
-  }
 }
 
 @media (max-width: 640px) {
@@ -973,22 +960,12 @@ h3 {
     font-size: clamp(2.6rem, 14vw, 4.5rem);
   }
 
-  .poster-prices {
-    width: 100%;
+  .poster-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .poster-price-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .poster-price {
-    min-height: 42px;
-  }
-
-  .poster-product-name > img,
-  .poster-magnet-thumbs img {
-    width: 32px;
-    height: 32px;
+  .poster-product-card {
+    min-height: 168px;
   }
 
   .poster-footer {
