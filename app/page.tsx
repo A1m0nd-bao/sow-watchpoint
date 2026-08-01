@@ -63,7 +63,7 @@ const products: Product[] = [
   {
     name: "飞天猫光栅卡",
     category: "光栅卡",
-    price: "¥待补",
+    price: "¥8",
     tone: "amber",
     badge: "光栅",
     desc: "飞天猫主题光栅卡，橙色暖调和星星元素很适合现场陈列。",
@@ -92,7 +92,7 @@ const products: Product[] = [
 const deals = [
   "冰箱贴 ¥12 一个，¥20 两个",
   "探奇小卡 ¥8，探奇立牌 ¥16",
-  "欢迎现场看样后再决定",
+  "有无料，商品售完即止",
 ];
 
 const paymentMethods = [
@@ -130,6 +130,7 @@ export default function Home() {
             <a href="#prices">提示</a>
             <a href="#payment">付款</a>
             <a href="#visit">现场</a>
+            <a href="poster">海报</a>
           </div>
         </nav>
 
@@ -146,6 +147,9 @@ export default function Home() {
               </a>
               <a className="secondary-action" href="#visit">
                 看摊位信息
+              </a>
+              <a className="secondary-action" href="poster">
+                全屏价目海报
               </a>
             </div>
           </div>
@@ -170,7 +174,7 @@ export default function Home() {
             <p className="eyebrow">Merch Gallery</p>
             <h2>今日商品图鉴</h2>
           </div>
-          <p className="section-note">价格已按当前价目表更新，飞天猫光栅卡价格可后续补上。</p>
+          <p className="section-note">价格已按当前价目表更新，全部商品可现场看图挑选。</p>
         </div>
 
         <div className="filter-row" aria-label="商品分类筛选">
@@ -215,7 +219,7 @@ export default function Home() {
           <p className="eyebrow">Booth Notes</p>
           <h2>购买提示</h2>
           <p>
-            价格已更新到页面中。飞天猫光栅卡、摊位号、限购规则和无料说明还可以继续按现场信息补齐。
+            有无料，商品售完即止。现场付款前请先确认商品与金额；也可以打开全屏价目海报给同行伙伴一起看。
           </p>
         </div>
         <div className="deal-list">
@@ -262,7 +266,19 @@ export default function Home() {
           </div>
           <div>
             <span>摊位号</span>
-            <strong>待补</strong>
+            <strong>A11</strong>
+          </div>
+          <div>
+            <span>展会</span>
+            <strong>魔都守望先锋同好会 only 1.0·老友记</strong>
+          </div>
+          <div>
+            <span>地点与日期</span>
+            <strong>上海 · 今日与明日</strong>
+          </div>
+          <div>
+            <span>现场提示</span>
+            <strong>有无料 · 售完即止</strong>
           </div>
           <div>
             <span>支付方式</span>

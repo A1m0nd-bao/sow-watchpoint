@@ -627,6 +627,191 @@ h3 {
   background: rgba(255, 255, 255, 0.055);
 }
 
+.poster-page {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #fff8ed;
+  color: #14284f;
+}
+
+.poster-background,
+.poster-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.poster-background {
+  object-fit: cover;
+  object-position: center;
+}
+
+.poster-shade {
+  background: linear-gradient(90deg, rgba(255, 249, 239, 0.62) 0%, rgba(255, 249, 239, 0.12) 62%, rgba(255, 249, 239, 0) 100%);
+}
+
+.poster-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  width: min(100%, 1800px);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: clamp(28px, 4.4vw, 76px) clamp(30px, 6.5vw, 120px) clamp(24px, 3.5vw, 58px);
+}
+
+.poster-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.poster-kicker,
+.poster-label {
+  margin: 0 0 8px;
+  color: #e86427;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.7rem, 1.15vw, 1.2rem);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.poster-header h1 {
+  max-width: none;
+  margin: 0;
+  color: #173263;
+  font-size: clamp(3.1rem, 7.1vw, 9.4rem);
+  font-weight: 950;
+  line-height: 0.88;
+}
+
+.booth-stamp {
+  display: grid;
+  width: clamp(96px, 11vw, 180px);
+  aspect-ratio: 1;
+  place-content: center;
+  border: clamp(3px, 0.45vw, 7px) solid #ee6b2c;
+  border-radius: 50%;
+  background: rgba(255, 250, 242, 0.76);
+  box-shadow: 0 12px 30px rgba(35, 74, 134, 0.13);
+  text-align: center;
+  transform: rotate(7deg);
+}
+
+.booth-stamp span {
+  color: #e86427;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.54rem, 0.85vw, 1rem);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.booth-stamp strong {
+  color: #173263;
+  font-size: clamp(2.2rem, 4.8vw, 6.2rem);
+  line-height: 0.95;
+}
+
+.poster-event {
+  justify-self: start;
+  margin-top: clamp(12px, 2vw, 28px);
+  padding: 8px 14px;
+  border-radius: 4px;
+  background: #173263;
+  color: white;
+  font-size: clamp(0.74rem, 1.35vw, 1.45rem);
+  font-weight: 800;
+}
+
+.poster-body {
+  display: grid;
+  align-items: end;
+  padding: clamp(18px, 3.5vw, 56px) 0;
+}
+
+.poster-prices {
+  width: min(68%, 860px);
+}
+
+.poster-price-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid rgba(22, 50, 99, 0.24);
+  background: rgba(22, 50, 99, 0.24);
+  box-shadow: 0 18px 36px rgba(35, 74, 134, 0.12);
+}
+
+.poster-price {
+  display: flex;
+  min-height: clamp(44px, 5.6vw, 88px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px clamp(12px, 1.7vw, 28px);
+  background: rgba(255, 252, 247, 0.92);
+}
+
+.poster-price span,
+.poster-magnet span {
+  font-size: clamp(0.83rem, 1.55vw, 1.65rem);
+  font-weight: 850;
+}
+
+.poster-price strong,
+.poster-magnet strong {
+  flex: none;
+  color: #e45221;
+  font-size: clamp(1.35rem, 2.75vw, 3.2rem);
+  font-weight: 950;
+  line-height: 0.9;
+}
+
+.poster-magnet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 10px;
+  padding: clamp(11px, 1.55vw, 22px) clamp(13px, 1.7vw, 28px);
+  border-left: 6px solid #e86427;
+  background: rgba(23, 50, 99, 0.92);
+  color: white;
+}
+
+.poster-magnet strong {
+  color: #ffbd6a;
+}
+
+.poster-magnet i {
+  display: inline-block;
+  width: 1px;
+  height: 0.75em;
+  margin: 0 0.18em;
+  background: rgba(255, 255, 255, 0.45);
+  vertical-align: -0.05em;
+}
+
+.poster-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 2px solid rgba(23, 50, 99, 0.6);
+  padding-top: clamp(10px, 1.5vw, 20px);
+  color: #173263;
+  font-size: clamp(0.78rem, 1.4vw, 1.5rem);
+  font-weight: 900;
+}
+
+.poster-footer p {
+  margin: 0;
+}
+
 @keyframes rise {
   from {
     opacity: 0;
@@ -671,6 +856,10 @@ h3 {
   .payment-grid,
   .visit-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .poster-prices {
+    width: 72%;
   }
 }
 
@@ -727,5 +916,30 @@ h3 {
 
   .product-card {
     min-height: 356px;
+  }
+
+  .poster-content {
+    min-height: 100svh;
+    padding: 28px 22px 22px;
+  }
+
+  .poster-header h1 {
+    font-size: clamp(2.6rem, 14vw, 4.5rem);
+  }
+
+  .poster-prices {
+    width: 100%;
+  }
+
+  .poster-price-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .poster-price {
+    min-height: 42px;
+  }
+
+  .poster-footer {
+    font-size: 0.75rem;
   }
 }
