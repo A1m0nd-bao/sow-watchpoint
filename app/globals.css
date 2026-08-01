@@ -647,10 +647,15 @@ h3 {
 .poster-background {
   object-fit: cover;
   object-position: center;
+  filter: blur(9px) saturate(0.88);
+  opacity: 0.64;
+  transform: scale(1.045);
 }
 
 .poster-shade {
-  background: linear-gradient(90deg, rgba(255, 249, 239, 0.62) 0%, rgba(255, 249, 239, 0.12) 62%, rgba(255, 249, 239, 0) 100%);
+  background:
+    linear-gradient(90deg, rgba(255, 249, 239, 0.88) 0%, rgba(255, 249, 239, 0.64) 52%, rgba(255, 249, 239, 0.25) 100%),
+    rgba(255, 249, 239, 0.24);
 }
 
 .poster-content {
@@ -757,8 +762,28 @@ h3 {
   background: rgba(255, 252, 247, 0.92);
 }
 
+.poster-product-name {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: clamp(7px, 0.9vw, 13px);
+}
+
+.poster-product-name > img,
+.poster-magnet-thumbs img {
+  display: block;
+  width: clamp(28px, 3.25vw, 48px);
+  height: clamp(28px, 3.25vw, 48px);
+  flex: none;
+  border: 1px solid rgba(23, 50, 99, 0.18);
+  border-radius: 4px;
+  background: white;
+  object-fit: cover;
+}
+
 .poster-price span,
 .poster-magnet span {
+  min-width: 0;
   font-size: clamp(0.83rem, 1.55vw, 1.65rem);
   font-weight: 850;
 }
@@ -788,6 +813,15 @@ h3 {
   color: #ffbd6a;
 }
 
+.poster-magnet-thumbs {
+  display: flex;
+  flex: none;
+}
+
+.poster-magnet-thumbs img + img {
+  margin-left: -9px;
+}
+
 .poster-magnet i {
   display: inline-block;
   width: 1px;
@@ -810,6 +844,18 @@ h3 {
 
 .poster-footer p {
   margin: 0;
+}
+
+@media (min-width: 700px) and (orientation: landscape) {
+  .poster-page,
+  .poster-content {
+    min-height: 0;
+    height: 100svh;
+  }
+
+  .poster-content {
+    padding: clamp(26px, 4.6vw, 68px) clamp(36px, 6.5vw, 104px) clamp(22px, 3.2vw, 46px);
+  }
 }
 
 @keyframes rise {
@@ -937,6 +983,12 @@ h3 {
 
   .poster-price {
     min-height: 42px;
+  }
+
+  .poster-product-name > img,
+  .poster-magnet-thumbs img {
+    width: 32px;
+    height: 32px;
   }
 
   .poster-footer {

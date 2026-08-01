@@ -1,10 +1,10 @@
 const priceGroups = [
-  ["魔法雾子吧唧", "¥14"],
-  ["雾子明信片", "¥8"],
-  ["土豆香片", "¥10"],
-  ["探奇拍立得小卡", "¥8"],
-  ["探奇亚克力立牌", "¥16"],
-  ["飞天猫光栅卡", "¥8"],
+  ["魔法雾子吧唧", "¥14", "magic-kiriko-badge.jpg"],
+  ["雾子明信片", "¥8", "kiriko-postcard.jpg"],
+  ["土豆香片", "¥10", "potato-fragrance.png"],
+  ["探奇拍立得小卡", "¥8", "venture-polaroid-standee.png"],
+  ["探奇亚克力立牌", "¥16", "venture-polaroid-standee.png"],
+  ["飞天猫光栅卡", "¥8", "flying-cat-lenticular.jpg"],
 ];
 
 export default function PosterPage() {
@@ -31,15 +31,24 @@ export default function PosterPage() {
           <div className="poster-prices">
             <p className="poster-label">PRICE LIST</p>
             <div className="poster-price-grid">
-              {priceGroups.map(([name, price]) => (
+              {priceGroups.map(([name, price, image]) => (
                 <div className="poster-price" key={name}>
-                  <span>{name}</span>
+                  <div className="poster-product-name">
+                    <img src={`../products/${image}`} alt="" />
+                    <span>{name}</span>
+                  </div>
                   <strong>{price}</strong>
                 </div>
               ))}
             </div>
             <div className="poster-magnet">
-              <span>安燃 / 无漾冰箱贴</span>
+              <div className="poster-product-name">
+                <div className="poster-magnet-thumbs" aria-hidden="true">
+                  <img src="../products/anran-magnet.jpg" alt="" />
+                  <img src="../products/wuyang-magnet.jpg" alt="" />
+                </div>
+                <span>安燃 / 无漾冰箱贴</span>
+              </div>
               <strong>¥12 一个 <i /> ¥20 两个</strong>
             </div>
           </div>
