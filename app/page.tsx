@@ -12,13 +12,13 @@ type Product = {
   image: string;
 };
 
-const categories = ["全部", "吧唧", "明信片", "香片", "小卡/立牌", "光栅卡", "冰箱贴"];
+const categories = ["全部", "吧唧", "明信片", "香片", "小卡", "立牌", "光栅卡", "冰箱贴"];
 
 const products: Product[] = [
   {
     name: "魔法雾子吧唧",
     category: "吧唧",
-    price: "¥待补",
+    price: "¥14",
     tone: "pink",
     badge: "魔法雾子",
     desc: "甜亮魔法少女风，蓝粉高饱和配色，适合痛包中心位。",
@@ -27,7 +27,7 @@ const products: Product[] = [
   {
     name: "雾子明信片",
     category: "明信片",
-    price: "¥待补",
+    price: "¥8",
     tone: "sky",
     badge: "明信片",
     desc: "蓝天白云下的雾子与狐灵，清爽治愈，适合收藏和互换。",
@@ -36,19 +36,28 @@ const products: Product[] = [
   {
     name: "土豆香片",
     category: "香片",
-    price: "¥待补",
+    price: "¥10",
     tone: "gold",
     badge: "香片",
     desc: "很有记忆点的土豆造型香片，摊位小物区的快乐担当。",
     image: "products/potato-fragrance.png",
   },
   {
-    name: "探奇拍立得小卡和立牌",
-    category: "小卡/立牌",
-    price: "¥待补",
+    name: "探奇拍立得小卡",
+    category: "小卡",
+    price: "¥8",
     tone: "olive",
-    badge: "组合",
-    desc: "探奇 Q 版小卡与立牌，动作俏皮，适合桌面展示。",
+    badge: "小卡",
+    desc: "探奇 Q 版拍立得小卡，动作俏皮，适合随身收藏。",
+    image: "products/venture-polaroid-standee.png",
+  },
+  {
+    name: "探奇亚克力立牌",
+    category: "立牌",
+    price: "¥16",
+    tone: "olive",
+    badge: "立牌",
+    desc: "探奇 Q 版立牌，适合桌面展示，可以和小卡一起收。",
     image: "products/venture-polaroid-standee.png",
   },
   {
@@ -63,7 +72,7 @@ const products: Product[] = [
   {
     name: "安燃冰箱贴",
     category: "冰箱贴",
-    price: "¥待补",
+    price: "¥12 / ¥20两个",
     tone: "orange",
     badge: "冰箱贴",
     desc: "火焰主题 Q 版冰箱贴，暖色系视觉强，适合成对摆放。",
@@ -72,7 +81,7 @@ const products: Product[] = [
   {
     name: "无漾冰箱贴",
     category: "冰箱贴",
-    price: "¥待补",
+    price: "¥12 / ¥20两个",
     tone: "blue",
     badge: "冰箱贴",
     desc: "水流主题 Q 版冰箱贴，蓝色清透，与安燃款可以组成一对。",
@@ -81,8 +90,8 @@ const products: Product[] = [
 ];
 
 const deals = [
-  "价格与余量以现场摊位牌为准",
-  "冰箱贴可成对陈列购买",
+  "冰箱贴 ¥12 一个，¥20 两个",
+  "探奇小卡 ¥8，探奇立牌 ¥16",
   "欢迎现场看样后再决定",
 ];
 
@@ -161,7 +170,7 @@ export default function Home() {
             <p className="eyebrow">Merch Gallery</p>
             <h2>今日商品图鉴</h2>
           </div>
-          <p className="section-note">价格先留占位，后续可按你的价目表一键替换。</p>
+          <p className="section-note">价格已按当前价目表更新，飞天猫光栅卡价格可后续补上。</p>
         </div>
 
         <div className="filter-row" aria-label="商品分类筛选">
@@ -206,7 +215,7 @@ export default function Home() {
           <p className="eyebrow">Booth Notes</p>
           <h2>购买提示</h2>
           <p>
-            当前版本已经换成真实商品图。价格、摊位号、限购规则和无料说明还可以继续按现场信息补齐。
+            价格已更新到页面中。飞天猫光栅卡、摊位号、限购规则和无料说明还可以继续按现场信息补齐。
           </p>
         </div>
         <div className="deal-list">
