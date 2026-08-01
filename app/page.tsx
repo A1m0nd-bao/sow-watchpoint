@@ -160,8 +160,8 @@ export default function Home() {
           <div className="hero-visual" aria-label="AL的望望小铺商品主视觉">
             <img
               className="hero-feature"
-              src="og.png"
-              alt="AL的望望小铺首页氛围展示图"
+              src="hero-home.png"
+              alt="雾子与狐灵主题首页展示图"
             />
             <div className="scan-card">
               <span>摊位名</span>
